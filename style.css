@@ -1,0 +1,50 @@
+body {
+    font-family: algerian, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+    background-image: url('bg.jpg'); /* Set background image */
+    background-size: cover; /* Cover the entire background */
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    max-width: 90%; /* Set max-width of popup */
+    max-height: 90%; /* Set max-height of popup */
+    overflow: auto; /* Enable scrolling if content exceeds max-height */
+}
+.popup img {
+    width: 25%; /* Set width of the image */
+    display: block; /* Make the image a block element to center it */
+    margin: 0 auto; /* Center the image horizontally */
+    margin-bottom: 20px; /* Add some space below the image */
+}
+.popup.hidden {
+    opacity: 0;
+}
+#page {
+    position: relative;
+    filter: blur(5px); /* Initial blur */
+    transition: filter 1s ease-out;
+}
+.popup-visible #page {
+    filter: blur(0); /* Remove blur when popup is visible */
+}
